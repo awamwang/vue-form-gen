@@ -1,0 +1,17 @@
+{
+  "name": "@vue-form-gen/generator",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awamwang/vue-form-gen.git",
+    "directory": "packages/generator"
+  },
+  "author": "Awam M Wang <keepgoingwm@gmail.com>",
+  "license": "MIT"
+}

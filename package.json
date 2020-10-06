@@ -1,87 +1,82 @@
 {
   "name": "vue-form-gen",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
+  "description": "一个图形化 Vue Form 表单生成器",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
-    "test:e2e-ci": "vue-cli-service test:e2e --headless",
-    "lint": "vue-cli-service lint",
-    "build-readme": "gh-md-toc --insert README.md",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "coverage": "lerna run coverage",
+    "changelog-lerna": "lerna-changelog",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "github-release": "conventional-github-releaser -p angular -r 1",
-    "prebuild": "rimraf ./dist && mkdir dist",
-    "version": "npm run build && npm run changelog && git add CHANGELOG.md && npm run build-readme && rm README.md.orig.* && rm README.md.toc.* && git add README.md"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2",
-    "vue-router": "^3.2.0"
+    "build-readme": "gh-md-toc --insert README.md && rm README.md.orig.* && rm README.md.toc.*",
+    "version": "npm run build && npm run changelog && git add CHANGELOG.md && npm run build-readme && git add README.md",
+    "bootstrap": "yarn && lerna bootstrap"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@cypress/code-coverage": "^3.8.1",
-    "@types/chai": "^4.2.11",
-    "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "^1.0.3",
+    "@vue/eslint-config-typescript": "^5.1.0",
     "babel-jest": "24.9.0",
     "babel-loader": "^8.1.0",
     "coveralls": "^3.1.0",
+    "cypress": "^5.3.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.0.1",
     "husky": "^4.3.0",
     "istanbul": "^0.4.5",
+    "lerna": "^3.22.1",
+    "lerna-changelog": "^1.0.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "semver": "^7.3.2",
+    "typescript": "~3.9.3"
   },
   "resolutions": {
     "babel-jest": "24.9.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awamwang/vue-form-gen.git"
+  },
+  "keywords": [
+    "vue",
+    "form",
+    "generator",
+    "element-ui",
+    "design"
+  ],
+  "author": "Awam M Wang <keepgoingwm@gmail.com>",
+  "engines": {
+    "node": ">=8"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/awamwang/vue-form-gen/issues"
   },
+  "homepage": "https://github.com/awamwang/vue-form-gen#readme",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
-  "engines": {
-    "node": ">=8"
-  },
-  "homepage": "https://github.com/awamwang/vue-form-gen#readme",
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "license": "MIT",
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/awamwang/vue-form-gen.git"
-  }
+  "dependencies": {}
 }

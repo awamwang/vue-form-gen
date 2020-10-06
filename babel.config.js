@@ -1,4 +1,6 @@
+// const semver = require('semver')
+// const supportedNodeVersion = semver.minVersion(pkg.engines.node).version
+
 module.exports = {
-  presets: ['@vue/cli-plugin-babel/preset'],
-  plugins: ['istanbul']
+  babelrcRoots: ['packages/*'],
 }

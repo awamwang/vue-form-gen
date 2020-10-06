@@ -12,8 +12,8 @@ import { Log } from '@/vue-assets/decorators/log'
 
 @Component({
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
 })
 export default class Home extends Vue {
   beforeRouteEnter(to: Route, from: Route, next: NavigationGuardNext<Home>) {
